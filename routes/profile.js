@@ -1,13 +1,8 @@
 const express = require('express');
+const profileController = require('../controller/profile')
 
 const router = express.Router();
 
-router.get('/me', (req, res, next) => {
-  res.json({
-    email: process.env.EMAIL,
-    name: "",
-    stack: process.env.STACK
-  });
-});
+router.get('/me', profileController.getProfile);
 
 module.exports = router;
