@@ -20,10 +20,6 @@ app.use(express.json());
 
 app.use(profileRoutes);
 
-app.get('/', (req, res) => {
-    res.json({ message: 'Profile API is running' });
-});
-
 app.use((req, res, next) => {
     res.status(404).json({message: 'Route not found'});
 });
