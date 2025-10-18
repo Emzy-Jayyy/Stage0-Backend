@@ -23,15 +23,15 @@ module.exports.getProfile = async (req, res, next) => {
             return res.status(200).json({
                 status: "success",
                 user: {
-                    email: process.env.EMAIL,
-                    name: process.env.NAME,
-                    stack: process.env.STACK,
+                    email: process.env.EMAIL || 'emediongb23@gmail.com',
+                    name: process.env.NAME || 'Emediong Joseph Bassey',
+                    stack: process.env.STACK || 'nodeJs/Express',
                 },
                 timestamp: new Date().toISOString(),
                 fact: "Unable to fetch cat fact at this time. Please try again later."
             });
         }
-        
+
         res.status(500).json({
             status: "error",
             message: "Failed to fetch profile data"
